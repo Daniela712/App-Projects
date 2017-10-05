@@ -1,4 +1,4 @@
-require_relative "tile"
+require_relative "tile.rb"
 
 class Board
   def self.empty_grid
@@ -55,7 +55,6 @@ class Board
     rows.all? { |row| solved_set?(row) } &&
       columns.all? { |col| solved_set?(col) } &&
       squares.all? { |square| solved_set?(square) }
-    end
   end
 
   def solved_set?(tiles)
@@ -73,7 +72,6 @@ class Board
         tiles << self[[i, j]]
       end
     end
-
     tiles
   end
 
