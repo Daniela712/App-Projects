@@ -1,4 +1,4 @@
-require "colorize"
+require "colorize.rb"
 
 class Tile
   attr_reader :value
