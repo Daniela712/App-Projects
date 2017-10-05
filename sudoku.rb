@@ -75,7 +75,7 @@ class SudokuGame
   end
 
   private
-  attr_reader :board
+  attr_accessor :board
 end
 
 
