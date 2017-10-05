@@ -1,4 +1,4 @@
-require_relative "tile"
+require_relative "tile.rb"
 
 class Board
   def self.empty_grid
@@ -10,7 +10,7 @@ class Board
   def self.from_file(filename)
     rows = File.readlines(filename).map(&:chomp)
     tiles = rows.map do |row|
-      nums = row.split(" ").map { |char| Integer(char) }
+      nums = row.to_s.split("").map { |char| Integer(char) }
       nums.map { |num| Tile.new(num) }
     end
 
@@ -72,7 +72,6 @@ class Board
         tiles << self[[i, j]]
       end
     end
-
     tiles
   end
 
